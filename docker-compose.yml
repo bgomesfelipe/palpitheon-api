@@ -1,0 +1,15 @@
+services:
+  db:
+    image: postgres:18
+    container_name: palpitheon-db
+    environment:
+      POSTGRES_USER: palpitheon
+      POSTGRES_PASSWORD: palpitheon
+      POSTGRES_DB: palpitheon
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql
+
+volumes:
+  pgdata:
